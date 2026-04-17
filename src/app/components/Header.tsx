@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import { AnimatePresence, motion } from 'motion/react';
 import { ChevronDown, Menu, ShoppingBag, Sparkles, X } from 'lucide-react';
-import Logo from "../../assets/Logo-1.png"
+import Logo from "../../assets/Logo.png"
 const collections = [
   { name: 'New Arrivals', path: '/collections/new-arrivals' },
   { name: 'Best Sellers', path: '/collections/best-sellers' },
@@ -104,9 +104,13 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center gap-4">
           <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl ">
-              {/* <img src={Logo} alt="Tippy Tap Nails Logo" className="h-18 w-18" /> */}
-            </div>
+         <div className="flex h-20 w-20 items-center justify-center">
+  <img 
+    src={Logo} 
+    alt="Tippy Tap Nails Logo" 
+    className="h-18 w-18 object-contain"
+  />
+</div>
            
           </Link>
 

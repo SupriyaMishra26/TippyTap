@@ -13,6 +13,7 @@ import {
   Star,
   Heart,
   Timer,
+  ShoppingBag,
   Wallet,
 } from 'lucide-react';
 import { useState } from 'react';
@@ -30,7 +31,7 @@ import productCherry from '../../imports/nail-pink.jpeg';
 import productMint from '../../imports/orange.jpeg';
 import productSunset from '../../imports/nail-red.jpeg';
 import productBlue from '../../imports/nail-blue.jpeg';
-import boxWhatsInside from '../../assets/box-whats-inside.jpg';
+import boxWhatsInside from '../../assets/box-whats-inside(copy).jpg';
 
 const nailsPink = productCherry;
 const nailsOrange = productMint;
@@ -489,37 +490,59 @@ export default function Home() {
   return (
    <div className="min-h-screen overflow-hidden bg-background text-foreground">
     {/* ===== HERO ===== */}
-<section className="relative min-h-[100svh] overflow-hidden flex items-end justify-center pt-52 sm:pt-60 pb-8 sm:pb-10">
-  <div className="absolute inset-0">
-    <img src={boxBlackNails} alt="" aria-hidden="true" className="h-full w-full object-cover object-center" />
-    <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background/75" />
-  </div>
+ <section className="relative min-h-[100svh] overflow-hidden flex items-end justify-center pt-52 sm:pt-60 pb-8 sm:pb-10">
+        <div className="absolute inset-0">
+          <img src={boxWhatsInside} alt="" aria-hidden="true" className="h-full w-full object-contain object-top sm:object-cover bg-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background/90" />
+        </div>
 
-  <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
-    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-      <p className="text-xs font-semibold uppercase tracking-[0.5em] text-primary font-body drop-shadow-sm">Tippy Tap Nails™</p>
-      <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-sm">
-        Tippy Tippy Tap,<br />
-        <span className="text-primary">Which Colour Do You Want?</span>
-      </h1>
-      <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-foreground/80 font-body">
-       Elevate your style with our premium collection of soft gel, non-toxic press-on nails. 
-      </p>
-    </motion.div>
+        <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        
+            <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-sm">
+              Tippy Tippy Tap,<br />
+              <span className="text-primary">Which Colour Do You Want?</span>
+            </h1>
+            <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-foreground/80 font-body">
+              Handmade press-on nails — Long Lasting • Reusable • Fits All Nail Beds
+            </p>
+          </motion.div>
 
-    <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-6 flex flex-wrap items-center justify-center gap-2">
-      {heroHighlights.map((item) => {
-        const Icon = item.icon;
-        return (
-          <span key={item.label} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur font-body shadow-sm">
-            <Icon className="h-3.5 w-3.5 text-primary" />
-            {item.label}
-          </span>
-        );
-      })}
-    </motion.div>
-  </div>
-</section>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-6 flex flex-wrap items-center justify-center gap-2">
+            {heroHighlights.map((item) => {
+              const Icon = item.icon;
+              return (
+                <span key={item.label} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur font-body shadow-sm">
+                  <Icon className="h-3.5 w-3.5 text-primary" />
+                  {item.label}
+                </span>
+              );
+            })}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="mt-7 flex flex-wrap items-center justify-center gap-3"
+          >
+            <a
+              href="#products"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-brand transition hover:scale-105 font-body"
+            >
+              <ShoppingBag className="h-4 w-4" />
+              Shop Collection
+            </a>
+            <a
+              href="#box-packaging"
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card/85 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition hover:border-primary hover:text-primary font-body"
+            >
+              View Catalog
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
 
       <section
         id="why-tippy-tap"
