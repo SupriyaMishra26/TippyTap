@@ -494,17 +494,18 @@ export default function Home() {
         <div className="absolute inset-0">
           <img src={boxWhatsInside} alt="" aria-hidden="true" className="h-full w-full object-contain object-top sm:object-cover bg-background" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/20 to-white/70" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         
-            <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-sm">
+           <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl text-black drop-shadow-lg">
               Tippy Tippy Tap,<br />
               <span className="text-primary">Which Colour Do You Want?</span>
             </h1>
-            <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-foreground/80 font-body">
-              Handmade press-on nails — Long Lasting • Reusable • Fits All Nail Beds
+          <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-black/80 font-body">
+              Handmade press-on nails — Long Lasting ,Reusable & Fits All Nail Beds
             </p>
           </motion.div>
 
