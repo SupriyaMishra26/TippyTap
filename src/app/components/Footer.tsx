@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 import { Facebook, Instagram, Mail, Sparkles } from 'lucide-react';
-
+import Logo from "../../assets/Logo.png"
 const shopLinks = [
   { name: 'New Arrivals', path: '/collections/new-arrivals' },
   { name: 'Best Sellers', path: '/collections/best-sellers' },
@@ -36,17 +36,18 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr]">
           <div>
             <Link to="/" className="inline-flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,#fff0f5,#f7a1bd)] text-[#7c1731] shadow-[0_16px_32px_rgba(0,0,0,0.15)]">
-                <span className="font-display text-lg leading-none">TT</span>
+               <Link to="/" className="flex items-center gap-3">
+                       <div className="flex h-20 w-20 items-center justify-center">
+                <img 
+                  src={Logo} 
+                  alt="Tippy Tap Nails Logo" 
+                  className="h-18 w-18 object-contain"
+                />
               </div>
+                  </Link>     
               <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-display text-2xl text-white">Tippy Tap Nails</span>
-                  <Sparkles className="h-4 w-4 text-[#ffd4e2]" />
-                </div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-white/65">
-                  signature press-ons
-                </p>
+               
+               
               </div>
             </Link>
 

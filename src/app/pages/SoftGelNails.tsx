@@ -6,7 +6,7 @@ const products = [
   {
     id: 1,
     name: 'Ocean Breeze',
-    price: '$24.99',
+    price: '₹24.99',
     image: '/src/imports/WhatsApp_Image_2026-04-11_at_3.25.52_PM_(1).jpeg',
     rating: 5,
   },
@@ -14,21 +14,21 @@ const products = [
     id: 2,
     name: 'Ruby Passion',
     image: '/src/imports/WhatsApp_Image_2026-04-11_at_3.25.52_PM.jpeg',
-    price: '$26.99',
+    price: '₹26.99',
     rating: 5,
   },
   {
     id: 3,
     name: 'Sunset Orange',
     image: '/src/imports/WhatsApp_Image_2026-04-11_at_3.25.51_PM_(1).jpeg',
-    price: '$24.99',
+    price: '₹24.99',
     rating: 5,
   },
   {
     id: 4,
     name: 'Soft Pink Blush',
     image: '/src/imports/WhatsApp_Image_2026-04-11_at_3.25.51_PM.jpeg',
-    price: '$22.99',
+    price: '₹22.99',
     rating: 5,
   },
 ];

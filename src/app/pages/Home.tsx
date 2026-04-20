@@ -16,10 +16,19 @@ import {
   ShoppingBag,
   Wallet,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 
+import heroslide1 from '../../assets/1-copy.jpg';
+import heroslide2 from '../../assets/2-copy.png';
+import heroslide3 from '../../assets/3-copy.jpg';
+import heroslide4 from '../../assets/4-copy.jpg';
+
+import categoryImage1 from '../../assets/category-1.png';
+import categoryImage2 from '../../assets/category-2.png';
+import categoryImage3 from '../../assets/category-3.png';
+import categoryImage4 from '../../assets/category-4.png';
 import heroBackground from '../../assets/hero-bg.jpg';
 import productBoxSide from '../../assets/product-box-side.jpg';
 import productLeopard from '../../assets/product-leopard.jpg';
@@ -92,6 +101,29 @@ const heroHighlights = [
   { label: 'Soft Gel', icon: Heart },
   { label: '24 Nails in a Box', icon: Package },
 ];
+
+// const heroSlides = [
+//   {
+//     img: "heroslide1",
+//     title: "Non-Toxic & Safe",
+//     subtitle: "Gentle on your nails • No harsh chemicals"
+//   },
+//   {
+//     img: "heroslide2",
+//     title: "Handpainted Designs",
+//     subtitle: "Each nail painted with care & precision"
+//   },
+//   {
+//     img: "heroslide3",
+//     title: "Soft Gel Comfort",
+//     subtitle: "Lightweight, flexible & super comfortable"
+//   },
+//   {
+//     img: "heroslide4",
+//     title: "24 Nails in a Set",
+//     subtitle: "Perfect sizing for every nail shape"
+//   }
+// ];
 
 const whyReasons: WhyReason[] = [
   { icon: Wallet, title: 'Half the Cost', desc: 'Luxury aesthetic for 50% less than salon prices' },
@@ -479,72 +511,113 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     </motion.article>
   );
 }
-
+// const heroSlidesImage = [heroslide1, heroslide2, heroslide3, heroslide4];
 export default function Home() {
   const [activeProductFilter, setActiveProductFilter] = useState<ProductFilter>('All');
   const visibleLooks =
     activeProductFilter === 'All'
       ? collectionLooks
       : collectionLooks.filter((item) => item.badges.includes(activeProductFilter));
+const [slideIndex, setSlideIndex] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setSlideIndex((i) => (i + 1) % heroSlides.length), 3500);
+    return () => clearInterval(id);
+  }, []);
+
+
+const heroSlides = [
+  {
+    img: heroslide1,
+    title: "Non-Toxic & Safe",
+    subtitle: "Gentle on your nails • No harsh chemicals"
+  },
+  {
+    img: heroslide2,
+    title: "Handpainted Designs",
+    subtitle: "Each nail painted with care & precision"
+  },
+  {
+    img: heroslide3,
+    title: "Soft Gel Comfort",
+    subtitle: "Lightweight, flexible & super comfortable"
+  },
+  {
+    img: heroslide4,
+    title: "24 Nails in a Set",
+    subtitle: "Perfect sizing for every nail shape"
+  }
+];
+
 
   return (
    <div className="min-h-screen overflow-hidden bg-background text-foreground">
-    {/* ===== HERO ===== */}
- <section className="relative min-h-[100svh] overflow-hidden flex items-end justify-center pt-52 sm:pt-60 pb-8 sm:pb-10">
-        <div className="absolute inset-0">
-          <img src={boxWhatsInside} alt="" aria-hidden="true" className="h-full w-full object-contain object-top sm:object-cover bg-background" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background/90" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/20 to-white/70" />
-        </div>
+  {/* ===== HERO ===== */}
+ <section className="relative h-screen overflow-hidden flex items-center justify-center">
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        
-           <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl text-black drop-shadow-lg">
-              Tippy Tippy Tap,<br />
-              <span className="text-primary">Which Colour Do You Want?</span>
-            </h1>
-          <p className="mx-auto mt-5 max-w-md text-sm leading-7 text-black/80 font-body">
-              Handmade press-on nails — Long Lasting ,Reusable & Fits All Nail Beds
-            </p>
-          </motion.div>
+  {/* ===== BACKGROUND SLIDES ===== */}
+  <div className="absolute inset-0">
+    {heroSlides.map((slide, i) => (
+      <img
+        key={i}
+        src={slide.img}
+        alt=""
+        className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-1000 ${
+          i === slideIndex ? 'opacity-70' : 'opacity-0'
+        }`}
+      />
+    ))}
 
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-6 flex flex-wrap items-center justify-center gap-2">
-            {heroHighlights.map((item) => {
-              const Icon = item.icon;
-              return (
-                <span key={item.label} className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card/85 px-3 py-1.5 text-xs font-medium text-foreground backdrop-blur font-body shadow-sm">
-                  <Icon className="h-3.5 w-3.5 text-primary" />
-                  {item.label}
-                </span>
-              );
-            })}
-          </motion.div>
+    {/* DARK OVERLAY (important for text visibility) */}
+    <div className="absolute inset-0 bg-black/40 z-10" />
+  </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="mt-7 flex flex-wrap items-center justify-center gap-3"
-          >
-            <a
-              href="#products"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-brand transition hover:scale-105 font-body"
-            >
-              <ShoppingBag className="h-4 w-4" />
-              Shop Collection
-            </a>
-            <a
-              href="#box-packaging"
-              className="inline-flex items-center gap-2 rounded-full border border-border bg-card/85 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition hover:border-primary hover:text-primary font-body"
-            >
-              View Catalog
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </motion.div>
-        </div>
-      </section>
+  {/* ===== CONTENT (TEXT + BUTTONS) ===== */}
+  <div className="relative z-20 text-center px-4 max-w-3xl">
+      <p className="text-xs font-semibold uppercase tracking-[0.5em] text-primary font-body drop-shadow-sm">Tippy Tap Nails™</p>
+    <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-sm">
+      {heroSlides[slideIndex].title}
+    </h1>
 
+    <p className="mt-4 text-sm sm:text-lg text-white/90">
+      {heroSlides[slideIndex].subtitle}
+    </p>
+
+    {/* BUTTONS */}
+    <div className="mt-6 flex flex-wrap justify-center gap-3">
+      <a
+        href="#products"
+        className="inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:scale-105 transition"
+      >
+        <ShoppingBag className="h-4 w-4" />
+        Shop Collection
+      </a>
+
+      <a
+        href="#box-packaging"
+        className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/20 transition"
+      >
+        View Catalog
+        <ArrowRight className="h-4 w-4" />
+      </a>
+    </div>
+  </div>
+
+  {/* ===== DOTS ===== */}
+  <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 gap-2">
+    {heroSlides.map((_, i) => (
+      <button
+        key={i}
+        onClick={() => setSlideIndex(i)}
+        className={`h-2 rounded-full transition-all ${
+          i === slideIndex ? 'w-6 bg-white' : 'w-2 bg-white/40'
+        }`}
+      />
+    ))}
+  </div>
+
+</section>
+
+  {/* ===== Why Tippy Tap ===== */}
       <section
         id="why-tippy-tap"
         className="scroll-mt-28 bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] py-16 sm:py-20"
@@ -579,6 +652,8 @@ export default function Home() {
         </div>
       </section>
 
+
+  {/* ===== Whta is the box ===== */}
        <section id="box-packaging" className="scroll-mt-28 bg-card py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-8 lg:grid-cols-2">
@@ -610,6 +685,8 @@ export default function Home() {
         </div>
       </section>
 
+
+  {/* ===== Collection ===== */}
       <section
         id="products"
         className="relative scroll-mt-28 overflow-hidden bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] py-16 sm:py-20"
@@ -678,6 +755,57 @@ export default function Home() {
           <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {categoryTiles.map((item) => (
               <CategoryTileCard key={item.title} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+       {/* ===== CATEGORY CARDS ===== */}
+      <section className="bg-background py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary font-body">Explore</p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Find your perfect set</h2>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: 'Design', title: 'Design Collection', cta: 'Browse Design', href: '#products', image: categoryImage1 },
+              { label: 'Shape', title: 'Find Your Shape', cta: 'View Shape', href: '#products', image: categoryImage2 },
+              { label: 'Length', title: 'Choose Your Length', cta: 'View Length', href: '#products', image: categoryImage3 },
+              { label: 'Kit', title: 'Everything in One Box', cta: "See What's Inside", href: '#box-packaging', image: categoryImage4 },
+            ].map((card, i) => (
+              <motion.a
+                key={card.title}
+                href={card.href}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="group relative flex flex-col overflow-hidden rounded-3xl bg-gradient-to-b from-brand-rose-light/60 via-accent to-accent/80 p-5 shadow-card transition-shadow hover:shadow-brand"
+              >
+                <span className="mx-auto inline-flex items-center rounded-full bg-primary px-4 py-1 text-xs font-semibold text-primary-foreground font-body shadow-sm">
+                  {card.label}
+                </span>
+                <h3 className="mt-4 text-center font-body text-base font-semibold text-foreground">
+                  {card.title}
+                </h3>
+                <div className="relative mt-4 flex-1 min-h-0 overflow-hidden rounded-2xl bg-card/40">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    loading="lazy"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <span className="mt-5 inline-flex items-center justify-center gap-2 self-center rounded-full bg-card px-5 py-2.5 text-xs font-semibold text-foreground shadow-sm transition group-hover:bg-primary group-hover:text-primary-foreground font-body">
+                  {card.cta}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </motion.a>
             ))}
           </div>
         </div>
