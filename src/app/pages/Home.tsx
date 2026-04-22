@@ -17,9 +17,9 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 
+import heroslide2 from '../../assets/2.png';
 import BG from '../../assets/design.png';
-import heroBg from '../../assets/hero-bg.jpg';
-import heroBox from '../../assets/hero-box.jpg';
+import CTAsection from '../../imports/1.jpeg';
 
 import StepFirst from '../../assets/step-1.png';
 
@@ -104,28 +104,6 @@ const heroHighlights: HeroHighlight[] = [
   { label: '24 Nails in a Box', icon: Package },
 ];
 
-// const heroSlides = [
-//   {
-//     img: "heroslide1",
-//     title: "Non-Toxic & Safe",
-//     subtitle: "Gentle on your nails • No harsh chemicals"
-//   },
-//   {
-//     img: "heroslide2",
-//     title: "Handpainted Designs",
-//     subtitle: "Each nail painted with care & precision"
-//   },
-//   {
-//     img: "heroslide3",
-//     title: "Soft Gel Comfort",
-//     subtitle: "Lightweight, flexible & super comfortable"
-//   },
-//   {
-//     img: "heroslide4",
-//     title: "24 Nails in a Set",
-//     subtitle: "Perfect sizing for every nail shape"
-//   }
-// ];
 
 const whyReasons: WhyReason[] = [
   { icon: Wallet, title: 'Half the Cost', desc: 'Luxury aesthetic for 50% less than salon prices' },
@@ -513,7 +491,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     </motion.article>
   );
 }
-// const heroSlidesImage = [heroslide1, heroslide2, heroslide3, heroslide4];
+
 export default function Home() {
   const [activeProductFilter, setActiveProductFilter] = useState<ProductFilter>('All');
   const visibleLooks =
@@ -529,91 +507,29 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-hidden bg-background text-foreground">
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] pt-0">
-        <div className="pointer-events-none absolute inset-0">
-          <img
-            src={heroBg}
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full object-cover object-center opacity-20"
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-          />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,215,229,0.72),transparent_32%),linear-gradient(180deg,rgba(255,248,244,0.94)_0%,rgba(255,253,253,0.88)_56%,rgba(255,253,253,1)_100%)]" />
-        </div>
-
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-10 py-14 lg:min-h-[640px] lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-            <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.45em] text-[#cb1f52] sm:text-xs">
-                Tippy Tap Nails
-              </p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-[#2b1020] sm:text-5xl lg:text-6xl">
-                Handpainted press-on nails with a salon-made finish.
-              </h1>
-              <p className="mt-5 max-w-xl text-base leading-8 text-[#6d4b58] sm:text-lg">
-                Non-toxic, reusable, and crafted for easy everyday glam without the salon wait.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link to="/#products" className={primaryButton}>
-                  Shop Now
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-                <Link to="/#how-it-works" className={secondaryButton}>
-                  How It Works
-                </Link>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-2">
-                {heroHighlights.map((item) => {
-                  const Icon = item.icon;
-
-                  return (
-                    <span key={item.label} className={chipBase}>
-                      <Icon className="h-4 w-4 text-[#cb1f52]" />
-                      {item.label}
-                    </span>
-                  );
-                })}
-              </div>
-            </div>
-
-            <motion.div
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-[2.5rem] border border-white/70 bg-white/80 p-4 shadow-[0_24px_70px_rgba(115,28,52,0.16)] backdrop-blur"
-            >
-              <div className="absolute left-6 top-6 z-10 inline-flex items-center gap-2 rounded-full bg-white/92 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#cb1f52] shadow-sm sm:text-xs">
-                <Sparkles className="h-4 w-4" />
-                Soft Gel
-              </div>
-
-              <div className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-[#fff0f5]">
-                <img
-                  src={heroBox}
-                  alt="Tippy Tap Nails gift box and press-on set"
-                  className="h-full w-full object-cover object-center"
-                  loading="eager"
-                  decoding="async"
-                  fetchPriority="high"
-                />
-              </div>
-
-              <div className="absolute inset-x-6 bottom-6 rounded-[1.5rem] bg-white/92 p-4 shadow-[0_16px_40px_rgba(115,28,52,0.12)] backdrop-blur">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#cb1f52]">
-                  Handpainted Luxury
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[#4f3846]">
-                  Reusable press-ons designed to feel special from the first glance.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
+    {/* ===== HERO ===== */}
+<section
+  className="bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] pt-0 pb-6"
+>
+  <div className="relative w-full">
+    <img
+      src={heroslide2}
+      alt="Tippy Tap Nails"
+      className="block h-auto w-full"
+      loading="eager"
+      decoding="async"
+    />
+    <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10">
+      <Link
+        to="/#products"
+        className="inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(203,31,82,0.38)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#b71848] sm:px-7 sm:py-3 sm:text-base"
+      >
+        Shop Now
+        <ArrowRight className="h-4 w-4" />
+      </Link>
+    </div>
+  </div>
+</section>
   {/* ===== Why Tippy Tap ===== */}
       <section
         id="why-tippy-tap"
@@ -872,7 +788,7 @@ export default function Home() {
             className="relative overflow-hidden rounded-[2.5rem] min-h-[320px] bg-[linear-gradient(135deg,#8f1736_0%,#5a1024_58%,#2b1020_100%)] shadow-[0_24px_70px_rgba(115,28,52,0.18)]"
           >
             <img
-              src={packagingBoxImage}
+              src={CTAsection}
               alt="Tippy Tap Nails packaging box and press-on nails"
               className="absolute inset-0 h-full w-full object-cover object-center opacity-92"
               loading="lazy"
