@@ -19,8 +19,8 @@ const quickLinks = [
 const supportLinks = [
   { name: 'Privacy Policy', path: '/privacy-policy' },
   { name: 'Terms of Service', path: '/terms-of-service' },
-  { name: 'Press Inquiries', path: '/press-inquiries' },
-  { name: 'Sustainability', path: '/sustainability' },
+  // { name: 'Press Inquiries', path: '/press-inquiries' },
+  // { name: 'Sustainability', path: '/sustainability' },
 ];
 
 const socialLinks = [
@@ -58,7 +58,7 @@ export default function Footer() {
       className="mt-0.5 text-[8px] font-light uppercase tracking-[0.4em] text-white/60"
       style={{ fontFamily: "'Jost', 'Georgia', serif" }}
     >
-     What colour do you want ?
+     Which colour do you want ?
     </span>
   </div>
 </Link>
@@ -152,9 +152,9 @@ export default function Footer() {
               <Link to="/terms-of-service" className="transition hover:text-white">
                 Terms of Service
               </Link>
-              <Link to="/press-inquiries" className="transition hover:text-white">
+              {/* <Link to="/press-inquiries" className="transition hover:text-white">
                 Press Inquiries
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

@@ -30,13 +30,13 @@ export default function TopBar() {
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 text-center">
         <Icon
           className="h-4 w-4 shrink-0"
-          style={{ color: "black" }}
+          style={{ color: "white" }}
           aria-hidden="true"
         />
         <p
           key={index}
           className="text-xs font-medium tracking-wide animate-in fade-in slide-in-from-bottom-1 duration-500 sm:text-sm"
-          style={{ color: "black" }}
+          style={{ color: "white" }}
         >
           {Current.text}
         </p>

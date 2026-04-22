@@ -115,7 +115,7 @@ export default function Header() {
                 className="mt-0.5 text-[8px] font-light uppercase tracking-[0.4em] text-black/60"
                 style={{ fontFamily: "'Jost', 'Georgia', serif" }}
               >
-                What colour do you want ?
+                Which colour do you want ?
               </span>
             </div>
           </Link>
