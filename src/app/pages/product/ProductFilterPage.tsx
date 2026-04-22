@@ -67,7 +67,7 @@ const sampleProducts = [
 
 export default function ProductFilterPage({ category, filter, description }: ProductFilterPageProps) {
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white pt-0">
       <ProductGrid
         products={sampleProducts}
         title={`${filter} ${category}`}

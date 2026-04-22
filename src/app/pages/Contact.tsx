@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, MessageCircle, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Instagram } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white pt-0">
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -108,7 +108,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Phone</h3>
-                      <p className="text-gray-600">+1 (555) 123-4567</p>
+                      <p className="text-gray-600">+91 836 886 3428</p>
                     </div>
                   </div>
 
@@ -118,7 +118,13 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Address</h3>
-                      <p className="text-gray-600">123 Beauty Ave, Suite 100<br />New York, NY 10001</p>
+                      <p className="text-gray-600">
+                        Street 76 Complex<br />
+                        Sector 76<br />
+                        Noida<br />
+                        Uttar Pradesh<br />
+                        201301
+                      </p>
                     </div>
                   </div>
 
@@ -127,8 +133,8 @@ export default function Contact() {
                       <MessageCircle className="w-6 h-6" style={{ color: '#D62332' }} />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">Live Chat</h3>
-                      <p className="text-gray-600">Available Monday - Friday<br />9am - 6pm EST</p>
+                      <h3 className="font-bold text-lg mb-1">Support</h3>
+                      <p className="text-gray-600">Available 24 Hours</p>
                     </div>
                   </div>
                 </div>
@@ -139,23 +145,18 @@ export default function Contact() {
                   Follow Us
                 </h2>
                 <div className="flex gap-4">
-                  {[
-                    { icon: Instagram, label: 'Instagram' },
-                    { icon: Facebook, label: 'Facebook' },
-                    { icon: Twitter, label: 'Twitter' },
-                  ].map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href="#"
-                      whileHover={{ scale: 1.1, y: -3 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="w-14 h-14 rounded-full flex items-center justify-center"
-                      style={{ backgroundColor: '#D62332' }}
-                    >
-                      <social.icon className="w-6 h-6 text-white" />
-                    </motion.a>
-                  ))}
+                  <motion.a
+                    href="https://www.instagram.com/tippytap_pressonnails/ "
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-14 h-14 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: '#D62332' }}
+                  >
+
+                    <Instagram className="w-6 h-6 text-white" />
+                  </motion.a>
                 </div>
+             
               </div>
             </motion.div>
           </div>

@@ -96,22 +96,28 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.55 }}
-      className="fixed left-0 right-0 top-0 z-50 border-b border-[#f1d4dc] bg-white/80 backdrop-blur-xl"
+      initial={{ opacity: 0, y: -12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className="relative border-b border-[#f1d4dc] bg-white/80 backdrop-blur-xl"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center gap-4">
           <Link to="/" className="flex items-center gap-3">
-         <div className="flex h-20 w-20 items-center justify-center">
-  <img 
-    src={Logo} 
-    alt="Tippy Tap Nails Logo" 
-    className="h-18 w-18 object-contain"
-  />
-</div>
-           
+            <div className="flex flex-col leading-none">
+              <span
+                className="text-2xl font-bold italic tracking-tight text-[#cb1f52]"
+                style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
+              >
+                Tippy Tap Nails
+              </span>
+              <span
+                className="mt-0.5 text-[8px] font-light uppercase tracking-[0.4em] text-black/60"
+                style={{ fontFamily: "'Jost', 'Georgia', serif" }}
+              >
+                What colour do you want ?
+              </span>
+            </div>
           </Link>
 
           <nav className="hidden lg:flex flex-1 items-center justify-center gap-1">
@@ -124,10 +130,7 @@ export default function Header() {
               onMouseEnter={() => setActiveDropdown('collections')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button
-                type="button"
-                className={navLinkClass(collectionsActive)}
-              >
+              <button type="button" className={navLinkClass(collectionsActive)}>
                 Collections
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
@@ -162,11 +165,8 @@ export default function Header() {
               onMouseEnter={() => setActiveDropdown('product')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button
-                type="button"
-                className={navLinkClass(productActive)}
-              >
-               Nail Length
+              <button type="button" className={navLinkClass(productActive)}>
+                Nail Length
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
 
@@ -215,6 +215,7 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* ===== Right Corner ===== */}
           <div className="ml-auto flex items-center gap-3">
             <Link
               to="/#products"
@@ -222,6 +223,7 @@ export default function Header() {
             >
               Shop Now
             </Link>
+
             <button
               type="button"
               className="hidden h-11 w-11 items-center justify-center rounded-full border border-[#f1d4dc] bg-white/90 text-[#cb1f52] shadow-sm transition hover:-translate-y-0.5 hover:border-[#cb1f52] lg:inline-flex"
@@ -229,6 +231,24 @@ export default function Header() {
             >
               <ShoppingBag className="h-5 w-5" />
             </button>
+
+            {/* Logo image - bilkul last */}
+    <Link to="/" className="hidden lg:block">
+  <div className="relative inline-block">
+    
+    <img
+      src={Logo}
+      alt="Tippy Tap Nails Logo"
+      className="h-14 w-14 rounded-full object-contain border border-[#f1d4dc] shadow-sm bg-white"
+    />
+
+    {/* TM */}
+    <span className="absolute -top-1 right-0 text-sm font-semibold text-black leading-none">
+      ™
+    </span>
+
+  </div>
+</Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen((open) => !open)}
@@ -250,7 +270,6 @@ export default function Header() {
               className="lg:hidden pb-4"
             >
               <div className="max-h-[80svh] overflow-y-auto rounded-[2rem] border border-[#f1d4dc] bg-white/96 p-4 shadow-[0_28px_60px_rgba(115,28,52,0.16)] backdrop-blur-xl">
-                
 
                 <div className="mt-4 space-y-3">
                   {directLinks.map((item) => (
@@ -274,9 +293,7 @@ export default function Header() {
                       }
                       className="flex w-full items-center justify-between text-left"
                     >
-                      <span className="font-display text-sm text-[black]">
-                        Collections
-                      </span>
+                      <span className="font-display text-sm text-[black]">Collections</span>
                       <ChevronDown
                         className={`h-4 w-4 text-[#cb1f52] transition ${
                           mobileSection === 'collections' ? 'rotate-180' : ''

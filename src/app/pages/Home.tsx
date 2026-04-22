@@ -20,27 +20,28 @@ import { useState,useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 
-import heroslide1 from '../../assets/1-copy.jpg';
-import heroslide2 from '../../assets/2-copy.png';
-import heroslide3 from '../../assets/3-copy.jpg';
-import heroslide4 from '../../assets/4-copy.jpg';
+import BG from '../../assets/design.png';
 
-import categoryImage1 from '../../assets/category-1.png';
-import categoryImage2 from '../../assets/category-2.png';
-import categoryImage3 from '../../assets/category-3.png';
-import categoryImage4 from '../../assets/category-4.png';
-import heroBackground from '../../assets/hero-bg.jpg';
+import heroslide2 from '../../assets/2.png';
+
+
+import softgel from '../../assets/soft-gel(1).jpeg';
+import softgelFirst from '../../assets/soft-gel(2).jpeg';
+import softgelSec from '../../assets/soft-gel(3).jpeg';
+import softgelThird from '../../assets/soft-gel(4).jpeg';
+import softgelForth from '../../assets/soft-gel(5).jpeg';
+import softgelFivth from '../../assets/soft-gel(6).jpeg';
 import productBoxSide from '../../assets/product-box-side.jpg';
 import productLeopard from '../../assets/product-leopard.jpg';
 import productLookbook from '../../assets/product-lookbook.jpg';
-import ctaBackground from '../../imports/1.jpg.jpeg';
+import ctaBackground from '../../imports/1.jpeg';
 import packagingBoxImage from '../../imports/WhatsApp_Image_2026-04-11_at_3.25.49_PM.jpeg';
-import boxBlackNails from '../../assets/box-black-nails.jpg';
+
 import productCherry from '../../imports/nail-pink.jpeg';
 import productMint from '../../imports/orange.jpeg';
 import productSunset from '../../imports/nail-red.jpeg';
 import productBlue from '../../imports/nail-blue.jpeg';
-import boxWhatsInside from '../../assets/box-whats-inside(copy).jpg';
+
 
 const nailsPink = productCherry;
 const nailsOrange = productMint;
@@ -248,25 +249,25 @@ const steps: StepCard[] = [
   {
     number: '01',
     title: 'Prep & Clean',
-    description: 'Buff, wipe, and get the nail ready for a better grip.',
+    description: 'Clean each nail with alcohol pad to remove oils. Gently push back cuticles and lightly buff surface for better grip.',
     image: productCherry,
   },
   {
     number: '02',
-    title: 'Choose your size',
-    description: 'Match each tip to the nail for a neat, custom fit.',
+    title: 'Match Size',
+    description: 'Match each press-on to your natural nail so it fully covers edge to edge. Arrange them before applying.',
     image: productMint,
   },
   {
     number: '03',
-    title: 'Press & hold',
-    description: 'Press from the cuticle down and keep it steady.',
+    title: 'Apply Glue',
+    description: 'Place a small dot of glue on nail or press-on. You can also use glue tabs for a quick mess-free option.',
     image: productSunset,
   },
   {
     number: '04',
-    title: 'Show it off',
-    description: 'Finish with shine and wear the look all week long.',
+    title: 'Press & Finish',
+    description: 'Press firmly for 30 seconds starting from cuticle outward. File edges if needed for smooth finish.',
     image: productBlue,
   },
 ];
@@ -319,9 +320,9 @@ function SectionHeading({
 
   return (
     <div className={`${alignment} max-w-2xl`}>
-      <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-[#cb1f52] sm:text-xs">
-        {eyebrow}
-      </p>
+      <p className="text-base sm:text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-[#cb1f52]">
+  {eyebrow}
+</p>
       <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#2b1020] sm:text-4xl">
         {title}
       </h2>
@@ -518,109 +519,40 @@ export default function Home() {
     activeProductFilter === 'All'
       ? collectionLooks
       : collectionLooks.filter((item) => item.badges.includes(activeProductFilter));
-const [slideIndex, setSlideIndex] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setSlideIndex((i) => (i + 1) % heroSlides.length), 3500);
-    return () => clearInterval(id);
-  }, []);
 
 
-const heroSlides = [
-  {
-    img: heroslide1,
-    title: "Non-Toxic & Safe",
-    subtitle: "Gentle on your nails • No harsh chemicals"
-  },
-  {
-    img: heroslide2,
-    title: "Handpainted Designs",
-    subtitle: "Each nail painted with care & precision"
-  },
-  {
-    img: heroslide3,
-    title: "Soft Gel Comfort",
-    subtitle: "Lightweight, flexible & super comfortable"
-  },
-  {
-    img: heroslide4,
-    title: "24 Nails in a Set",
-    subtitle: "Perfect sizing for every nail shape"
-  }
-];
+
+
 
 
   return (
    <div className="min-h-screen overflow-hidden bg-background text-foreground">
   {/* ===== HERO ===== */}
- <section className="relative h-screen overflow-hidden flex items-center justify-center">
-
-  {/* ===== BACKGROUND SLIDES ===== */}
-  <div className="absolute inset-0">
-    {heroSlides.map((slide, i) => (
+ <section className="bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] pt-0 pb-6">
+  <div className="relative w-full">
       <img
-        key={i}
-        src={slide.img}
-        alt=""
-        className={`absolute inset-0 h-full w-full object-cover object-top transition-opacity duration-1000 ${
-          i === slideIndex ? 'opacity-70' : 'opacity-0'
-        }`}
+        src={heroslide2}
+        alt="Tippy Tap Nails"
+        className="block h-auto w-full"
+        loading="eager"
+        decoding="async"
       />
-    ))}
-
-    {/* DARK OVERLAY (important for text visibility) */}
-    <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10">
+        <Link
+          to="/#products"
+          className="inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_12px_32px_rgba(203,31,82,0.38)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#b71848] sm:px-7 sm:py-3 sm:text-base"
+        >
+          Shop Now
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
   </div>
-
-  {/* ===== CONTENT (TEXT + BUTTONS) ===== */}
-  <div className="relative z-20 text-center px-4 max-w-3xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.5em] text-primary font-body drop-shadow-sm">Tippy Tap Nails™</p>
-    <h1 className="mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-sm">
-      {heroSlides[slideIndex].title}
-    </h1>
-
-    <p className="mt-4 text-sm sm:text-lg text-white/90">
-      {heroSlides[slideIndex].subtitle}
-    </p>
-
-    {/* BUTTONS */}
-    <div className="mt-6 flex flex-wrap justify-center gap-3">
-      <a
-        href="#products"
-        className="inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-6 py-3 text-sm font-semibold text-white shadow-lg hover:scale-105 transition"
-      >
-        <ShoppingBag className="h-4 w-4" />
-        Shop Collection
-      </a>
-
-      <a
-        href="#box-packaging"
-        className="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:bg-white/20 transition"
-      >
-        View Catalog
-        <ArrowRight className="h-4 w-4" />
-      </a>
-    </div>
-  </div>
-
-  {/* ===== DOTS ===== */}
-  <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2 gap-2">
-    {heroSlides.map((_, i) => (
-      <button
-        key={i}
-        onClick={() => setSlideIndex(i)}
-        className={`h-2 rounded-full transition-all ${
-          i === slideIndex ? 'w-6 bg-white' : 'w-2 bg-white/40'
-        }`}
-      />
-    ))}
-  </div>
-
 </section>
 
   {/* ===== Why Tippy Tap ===== */}
       <section
         id="why-tippy-tap"
-        className="scroll-mt-28 bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] py-16 sm:py-20"
+       className="scroll-mt-[120px] bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] pt-6 pb-12 sm:pt-8 sm:pb-16"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -653,49 +585,80 @@ const heroSlides = [
       </section>
 
 
-  {/* ===== Whta is the box ===== */}
-       <section id="box-packaging" className="scroll-mt-28 bg-card py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-2 lg:order-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary font-body">What's in the Box?</p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">Everything you need, beautifully packaged</h2>
-              <p className="mt-4 text-sm leading-7 text-muted-foreground font-body">
-                At Tippy Tap Nails, we're not just a press-on nail brand. We are a collective of artists and dreamers dedicated to redefining what it means to have a salon-quality manicure.
-              </p>
-              <div className="mt-6 space-y-2.5">
-                {['24 press-on nails in your chosen colour', 'Adhesive glue tabs (jelly stickers)', 'Nail glue bottle', 'Nail file for shaping', 'Wooden cuticle pusher', 'Beautiful gift-ready box packaging'].map((item) => (
-                  <div key={item} className="flex items-start gap-2.5">
-                    <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent text-primary">
-                      <Check className="h-3.5 w-3.5" />
-                    </span>
-                    <p className="text-sm leading-6 text-muted-foreground font-body">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+  {/* ===== Soft Gel Features ===== */}
+      {/* ===== Soft Gel Features ===== */}
+  <section className="relative py-16 sm:py-20 overflow-hidden">
 
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="order-1 lg:order-2">
-              <div className="grid grid-cols-2 gap-3">
-                <img src={boxWhatsInside} alt="What's in the Tippy Tap box" className="aspect-square w-full rounded-2xl object-cover shadow-card" loading="lazy" />
-                <img src={boxBlackNails} alt="Tippy Tap Nails packaging" className="aspect-square w-full rounded-2xl object-cover shadow-card" loading="lazy" />
-              </div>
-            </motion.div>
+  {/* ✅ Background Image */}
+<img
+  src={BG}
+  alt=""
+  className="absolute left-1/2 top-0 -translate-x-1/2 h-full w-auto max-w-none object-contain opacity-60"
+/>
+
+  {/* ✅ Overlay (important for readability) */}
+  
+
+  <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    
+    <div className="mx-auto max-w-2xl text-center">
+      <p className="text-base sm:text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-[#cb1f52]">
+        SOFT GEL
+      </p>
+
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#2b1020] sm:text-4xl">
+        Premium Press on Nails
+      </h2>
+
+      <p className="mt-4 text-sm leading-7 text-[#6d4b58] sm:text-base">
+        Designed for comfort, safety, and a flawless salon-like finish — every set is crafted to feel light, gentle, and effortlessly stylish.
+      </p>
+    </div>
+
+    <div className="mt-12 grid grid-cols-3 gap-6 sm:gap-8">
+      {[
+        { image: softgelFirst, text: "Non-Toxic & Safe" },
+        { image: softgelSec, text: "Gentle on Nails" },
+        { image: softgelThird, text: "Light Weight" },
+        { image: softgelForth, text: "Comfortable Wear" },
+        { image: softgelFivth, text: "24 Nails in a Set" },
+        { image: softgelFirst, text: "Non-Harsh Chemicals" },
+      ].map((item, i) => (
+        <motion.div
+          key={item.text}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: i * 0.06 }}
+          className="flex flex-col items-center"
+        >
+          <div className="mx-auto aspect-square w-36 overflow-hidden rounded-full border-2 border-[#f1d4dc] bg-[#fff8fb] shadow-[0_12px_30px_rgba(115,28,52,0.08)] sm:w-44 md:w-52">
+            <img
+              src={item.image}
+              alt={item.text}
+              className="h-full w-full object-cover"
+            />
           </div>
-        </div>
-      </section>
 
+          <p className="mt-3 text-center text-sm font-semibold text-[#2b1020] sm:text-base">
+            {item.text}
+          </p>
+        </motion.div>
+      ))}
+    </div>
 
+  </div>
+</section>
   {/* ===== Collection ===== */}
       <section
         id="products"
-        className="relative scroll-mt-28 overflow-hidden bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] py-16 sm:py-20"
+        className="relative scroll-mt-[120px] overflow-hidden bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] py-16 sm:py-20"
       >
         <div className="absolute inset-x-0 top-0 h-44 bg-[radial-gradient(circle_at_50%_0%,rgba(255,215,229,0.62),transparent_68%)]" />
         <div className="absolute inset-y-0 right-0 w-72 bg-[radial-gradient(circle_at_100%_30%,rgba(203,31,82,0.08),transparent_58%)]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.55em] text-[#cb1f52] sm:text-xs">
+            <p className="text-base sm:text-lg md:text-xl font-semibold uppercase tracking-[0.2em] text-[#cb1f52]">
               SHOP THE SET
             </p>
             <h2 className="mt-3 font-display text-3xl tracking-tight text-[#2b1020] sm:text-4xl md:text-5xl">
@@ -735,35 +698,13 @@ const heroSlides = [
             ))}
           </div>
 
-          <div className="mt-14 flex items-end justify-between gap-4">
-            <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.55em] text-[#cb1f52] sm:text-xs">
-                MORE CATEGORIES
-              </p>
-              <h3 className="mt-3 font-display text-2xl tracking-tight text-[#2b1020] sm:text-3xl">
-                Browse the rest of the range
-              </h3>
-            </div>
-            <Link
-              to="/product/style/french-manicure"
-              className="hidden rounded-full border border-[#e7cfd7] bg-white px-5 py-2.5 text-sm font-semibold text-[#7b1730] shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#cb1f52] hover:text-[#cb1f52] sm:inline-flex"
-            >
-              Explore all
-            </Link>
-          </div>
-
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {categoryTiles.map((item) => (
-              <CategoryTileCard key={item.title} item={item} />
-            ))}
-          </div>
         </div>
       </section>
 
 
 
        {/* ===== CATEGORY CARDS ===== */}
-      <section className="bg-background py-16 sm:py-20">
+      {/* <section className="bg-background py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-primary font-body">Explore</p>
@@ -809,28 +750,35 @@ const heroSlides = [
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section
-        id="how-it-works"
-        className="scroll-mt-28 bg-[linear-gradient(180deg,#fff8f4_0%,#ffeef4_100%)] py-16 sm:py-20"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="HOW IT WORKS"
-            title="Nail it in just 4 easy steps"
-            description="Four small moves and you're ready to go. The images stay front and center, with quick copy underneath."
-          />
+    <section
+  id="how-it-works"
+  className="scroll-mt-[100px] bg-[linear-gradient(180deg,#fff8f4_0%,#ffeef4_100%)] pt-10 pb-14 sm:pt-12 sm:pb-16"
+>
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    
+    <div className="mb-6">
+      <SectionHeading
+        eyebrow="HOW IT WORKS"
+        title="Nail it in just 4 easy steps"
+        description="Four small moves and you're ready to go. The images stay front and center, with quick copy underneath."
+      />
+    </div>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {steps.map((step) => (
-              <StepCardView key={step.number} step={step} />
-            ))}
-          </div>
-        </div>
-      </section>
+    <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      {steps.map((step) => (
+        <StepCardView key={step.number} step={step} />
+      ))}
+    </div>
 
-      <section id="testimonials" className="scroll-mt-28 bg-white py-16 sm:py-20">
+  </div>
+</section>
+
+     <section
+  id="testimonials"
+  className="scroll-mt-[100px] bg-white pt-10 pb-14 sm:pt-12 sm:pb-16"
+>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="TESTIMONIALS"
@@ -883,13 +831,7 @@ const heroSlides = [
                     Shop Now
                     <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link
-                    to="/#how-it-works"
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/35 bg-white/10 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/20"
-                  >
-                    See How It Works
-                    <ChevronRight className="h-4 w-4" />
-                  </Link>
+                  
                 </div>
 
                 <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/12 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/80 backdrop-blur sm:text-xs">

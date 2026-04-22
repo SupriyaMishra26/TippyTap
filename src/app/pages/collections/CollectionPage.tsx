@@ -67,7 +67,7 @@ const sampleProducts = [
 
 export default function CollectionPage({ title, description }: CollectionPageProps) {
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white pt-0">
       <ProductGrid products={sampleProducts} title={title} description={description} />
     </div>
   );

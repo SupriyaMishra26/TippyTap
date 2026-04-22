@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
+import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from "./components/ScrollToTop";
@@ -60,7 +61,11 @@ export default function App() {
     <BrowserRouter>
      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
-        <Header />
+          <TopBar />
+        <div className="sticky top-0 z-50">
+        
+          <Header />
+        </div>
         <main className="flex-grow">
           <Routes>
             {/* Home */}

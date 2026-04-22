@@ -24,8 +24,8 @@ const supportLinks = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Facebook, href: '#', label: 'Facebook' },
+  { icon: Instagram, href: 'https://www.instagram.com/tippytap_pressonnails/ ', label: 'Instagram' },
+  
   { icon: Mail, href: 'mailto:support@tippytapnails.com', label: 'Email' },
 ];
 
@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr]">
           <div>
             <Link to="/" className="inline-flex items-center gap-3">
-               <Link to="/" className="flex items-center gap-3">
+               {/* <Link to="/" className="flex items-center gap-3">
                        <div className="flex h-20 w-20 items-center justify-center">
                 <img 
                   src={Logo} 
@@ -44,7 +44,24 @@ export default function Footer() {
                   className="h-18 w-18 object-contain"
                 />
               </div>
-                  </Link>     
+                  </Link>      */}
+                   <Link to="/" className="flex items-center gap-3">
+ 
+  <div className="flex flex-col leading-none">
+    <span
+      className="text-2xl font-bold italic tracking-tight  text-[#cb1f52]"
+      style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
+    >
+      Tippy Tap Nails
+    </span>
+    <span
+      className="mt-0.5 text-[8px] font-light uppercase tracking-[0.4em] text-white/60"
+      style={{ fontFamily: "'Jost', 'Georgia', serif" }}
+    >
+     What colour do you want ?
+    </span>
+  </div>
+</Link>
               <div>
                
                

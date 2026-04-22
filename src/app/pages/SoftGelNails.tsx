@@ -68,61 +68,76 @@ export default function SoftGelNails() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20">
+    <div className="min-h-screen bg-white pt-0">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-pink-50/30 to-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6" style={{ color: '#D62332' }}>
-              Soft Gel Nails
-            </h1>
-            <p className="text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Experience the perfect blend of <strong>flexibility</strong>, <strong>comfort</strong>, and <strong>durability</strong>.
-              Our soft gel press-on nails are designed to feel as natural as your own nails.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+   <section className="pt-12 pb-10 bg-gradient-to-b from-pink-50/30 to-white">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="text-center"
+    >
+      <h1
+        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 leading-tight"
+        style={{ color: '#D62332' }}
+      >
+        Soft Gel Nails
+      </h1>
 
+      <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed mt-0">
+        Experience the perfect blend of <strong>flexibility</strong>,{" "}
+        <strong>comfort</strong>, and <strong>durability</strong>.
+        <br className="hidden md:block" />
+        Our soft gel press-on nails are designed to feel as natural as your own nails.
+      </p>
+    </motion.div>
+  </div>
+</section>
       {/* Features Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="p-6 rounded-2xl border-2"
-                style={{ borderColor: '#D5597C' }}
-              >
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
-                  style={{ backgroundColor: '#FFF5F7' }}
-                >
-                  <feature.icon className="w-7 h-7" style={{ color: '#D62332' }} />
-                </motion.div>
-                <h3 className="text-xl font-bold mb-2" style={{ color: '#D62332' }}>
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+     <section className="pt-6 pb-16 md:pb-20">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      {features.map((feature, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          whileHover={{ y: -6 }}
+          className="p-6 md:p-7 rounded-2xl border-2 bg-white shadow-sm hover:shadow-md transition-all"
+          style={{ borderColor: '#D5597C' }}
+        >
+          
+          <motion.div
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.6 }}
+            className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4"
+            style={{ backgroundColor: '#FFF5F7' }}
+          >
+            <feature.icon
+              className="w-6 h-6 md:w-7 md:h-7"
+              style={{ color: '#D62332' }}
+            />
+          </motion.div>
+
+          <h3
+            className="text-lg md:text-xl font-bold mb-2"
+            style={{ color: '#D62332' }}
+          >
+            {feature.title}
+          </h3>
+
+          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+            {feature.description}
+          </p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Products */}
       <ProductGrid
