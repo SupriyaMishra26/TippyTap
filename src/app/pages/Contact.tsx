@@ -98,7 +98,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Email</h3>
-                      <p className="text-gray-600">support@tippytapnails.com</p>
+                      <p className="text-gray-600">tippytapnail@gmail.com</p>
                     </div>
                   </div>
 
@@ -134,7 +134,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Support</h3>
-                      <p className="text-gray-600">Available 24 Hours</p>
+                     <p className="text-gray-600">Support hours: 11:00 AM – 5:00 PM (IST)</p>
                     </div>
                   </div>
                 </div>

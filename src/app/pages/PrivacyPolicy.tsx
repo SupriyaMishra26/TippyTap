@@ -65,8 +65,8 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold mb-4" style={{ color: '#D62332' }}>6. Contact Us</h2>
                 <p>
                   If you have questions about this Privacy Policy, please contact us at:<br />
-                  <strong>Email:</strong> privacy@tippytapnails.com<br />
-                  <strong>Phone:</strong> +1 (555) 123-4567
+                  <strong>Email:</strong> tippytapnail@gmail.com<br />
+                  <strong>Phone:</strong> +91 836 886 3428
                 </p>
               </section>
             </div>

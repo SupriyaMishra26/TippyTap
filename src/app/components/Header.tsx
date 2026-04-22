@@ -18,7 +18,7 @@ const productGroups = [
     items: [
       { name: 'Short', path: '/product/length/short' },
       { name: 'Medium', path: '/product/length/medium' },
-      { name: 'Medium-Long', path: '/product/length/medium-long' },
+      // { name: 'Medium-Long', path: '/product/length/medium-long' },
       { name: 'Long', path: '/product/length/long' },
       { name: 'Extra Long', path: '/product/length/extra-long' },
     ],
@@ -103,19 +103,20 @@ export default function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center gap-4">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex flex-col leading-none">
+           <Link to="/" className="flex items-center gap-3">
+            
+            <div className="flex flex-col items-center leading-none">
               <span
-                className="text-2xl font-bold italic tracking-tight text-[#cb1f52]"
+                className="text-3xl font-normal italic  tracking-tight text-[#cb1f52]"
                 style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
               >
                 Tippy Tap Nails
               </span>
               <span
-                className="mt-0.5 text-[8px] font-light uppercase tracking-[0.4em] text-black/60"
-                style={{ fontFamily: "'Jost', 'Georgia', serif" }}
+                className="mt-1 text-center text-[9px] font-light tracking-[0.12em] text-black"
+                style={{ fontFamily: "'Jost', sans-serif" }}
               >
-                Which colour do you want ?
+                Tippy Tippy Tap, which colour do you want??
               </span>
             </div>
           </Link>
@@ -239,7 +240,10 @@ export default function Header() {
     <img
       src={Logo}
       alt="Tippy Tap Nails Logo"
-      className="h-14 w-14 rounded-full object-contain border border-[#f1d4dc] shadow-sm bg-white"
+      className="h-14 w-14 rounded-full border border-[#f1d4dc] bg-white object-contain shadow-sm"
+      loading="eager"
+      decoding="async"
+      fetchPriority="high"
     />
 
     {/* TM */}

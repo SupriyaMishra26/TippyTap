@@ -58,6 +58,9 @@ export default function ProductGrid({ products, title, description }: ProductGri
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     animate={{
                       scale: hoveredProduct === product.id ? 1.1 : 1,
                     }}

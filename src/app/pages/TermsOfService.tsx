@@ -50,13 +50,14 @@ export default function TermsOfService() {
                 </p>
               </section>
 
-              <section>
-                <h2 className="text-2xl font-bold mb-4" style={{ color: '#D62332' }}>5. Returns and Refunds</h2>
-                <p>
-                  Products may be returned within 30 days of delivery for a full refund if unopened and in original
-                  condition. Custom or opened products cannot be returned for hygiene reasons.
-                </p>
-              </section>
+             <section>
+  <h2 className="text-2xl font-bold mb-4" style={{ color: '#D62332' }}>
+    5. Returns and Refunds
+  </h2>
+  <p>
+    All products are non‑refundable. Please ensure your order details are correct before completing payment, as no refunds or exchanges are possible.
+  </p>
+</section>
 
               <section>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: '#D62332' }}>6. Intellectual Property</h2>
@@ -77,7 +78,7 @@ export default function TermsOfService() {
               <section>
                 <h2 className="text-2xl font-bold mb-4" style={{ color: '#D62332' }}>8. Contact</h2>
                 <p>
-                  For questions about these Terms, contact us at legal@tippytapnails.com
+                  For questions about these Terms, contact us at tippytapnail@gmail.com or +91 836 886 3428.
                 </p>
               </section>
             </div>

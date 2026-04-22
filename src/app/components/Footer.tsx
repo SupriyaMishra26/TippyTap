@@ -26,7 +26,7 @@ const supportLinks = [
 const socialLinks = [
   { icon: Instagram, href: 'https://www.instagram.com/tippytap_pressonnails/ ', label: 'Instagram' },
   
-  { icon: Mail, href: 'mailto:support@tippytapnails.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:tippytapnail@gmail.com', label: 'Email' },
 ];
 
 export default function Footer() {
@@ -35,38 +35,31 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.25fr_0.85fr_0.85fr_0.85fr]">
           <div>
-            <Link to="/" className="inline-flex items-center gap-3">
-               {/* <Link to="/" className="flex items-center gap-3">
-                       <div className="flex h-20 w-20 items-center justify-center">
-                <img 
-                  src={Logo} 
-                  alt="Tippy Tap Nails Logo" 
-                  className="h-18 w-18 object-contain"
-                />
-              </div>
-                  </Link>      */}
-                   <Link to="/" className="flex items-center gap-3">
- 
-  <div className="flex flex-col leading-none">
-    <span
-      className="text-2xl font-bold italic tracking-tight  text-[#cb1f52]"
-      style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-    >
-      Tippy Tap Nails
-    </span>
-    <span
-      className="mt-0.5 text-[8px] font-light uppercase tracking-[0.4em] text-white/60"
-      style={{ fontFamily: "'Jost', 'Georgia', serif" }}
-    >
-     Which colour do you want ?
-    </span>
-  </div>
-</Link>
-              <div>
-               
-               
-              </div>
-            </Link>
+            <Link to="/" className="flex items-center gap-3">
+              <img
+                src={Logo}
+                alt="Tippy Tap Nails Logo"
+                className="h-12 w-12 rounded-full border border-white/15 bg-white/95 object-contain shadow-sm"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+              />
+
+            <div className="flex flex-col items-center leading-none">
+              <span
+                className="text-3xl font-normal italic  tracking-tight text-[#cb1f52]"
+                style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
+              >
+                Tippy Tap Nails
+              </span>
+              <span
+                className="mt-1 text-center text-[9px] font-light tracking-[0.12em] text-white"
+                style={{ fontFamily: "'Jost', sans-serif" }}
+              >
+                Tippy Tippy Tap, which colour do you want??
+              </span>
+            </div>
+          </Link>
 
             <p className="mt-6 max-w-md text-sm leading-7 text-white/75">
               Premium press-on nails in deep rose, blush, and warm white, wrapped in
