@@ -1,13 +1,24 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Toaster as Sonner } from './components/ui/toaster';
+import { TooltipProvider } from './components/ui/tooltip';
+import { AppProvider } from './contexts/AppContexts';
+
 import Logo from '../assets/Logo.png';
 import heroPreview from '../assets/hero-bg.jpg';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from "./components/ScrollToTop";
+import AuthModal from './components/AuthModal';
 // Pages
 import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Wishlist from './pages/Wishlist';
+import ProductDetail from './pages/ProductDetail';
+import NotFound from './pages/NotFound';
 
 // Collections
 import NewArrivals from './pages/collections/NewArrivals';
@@ -30,17 +41,17 @@ import Stiletto from './pages/product/shape/Stiletto';
 import Square from './pages/product/shape/Square';
 import Round from './pages/product/shape/Round';
 import Almond from './pages/product/shape/Almond';
-import Ballerina from './pages/product/shape/Ballerina';
+import Oval from './pages/product/shape/Oval';
 
 // Product - Texture
 import Matte from './pages/product/texture/Matte';
 import Glossy from './pages/product/texture/Glossy';
 import TextureGlitters from './pages/product/texture/Glitters';
 import TextureGemstones from './pages/product/texture/Gemstones';
-import Metallic from './pages/product/texture/Metallic';
+import CatEye from './pages/product/texture/CatEye';
 
 // Product - Style
-import FrenchManicure from './pages/product/style/FrenchManicure';
+import FrenchNail from './pages/product/style/FrenchManicure';
 import Solids from './pages/product/style/Solids';
 import Prints from './pages/product/style/Prints';
 import StyleGlitters from './pages/product/style/StyleGlitters';
@@ -49,16 +60,26 @@ import AnimalPrint from './pages/product/style/AnimalPrint';
 import Ombre from './pages/product/style/Ombre';
 import CatEyes from './pages/product/style/CatEyes';
 
+//colours
+import Pink from './pages/product/colour/pink';
+import Red from './pages/product/colour/red';
+import Blue from './pages/product/colour/blue';
+import Nude from './pages/product/colour/nude';
+import White from './pages/product/colour/white';
+import Black from './pages/product/colour/black';
+import Purple from './pages/product/colour/purple';
+import Green from './pages/product/colour/green';
+
 // Other Pages
+import Shop from './pages/Shop';
 import SoftGelNails from './pages/SoftGelNails';
 import OurStory from './pages/OurStory';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
-import PressInquiries from './pages/PressInquiries';
-import Sustainability from './pages/Sustainability';
 
+const queryClient = new QueryClient();
 const SITE_NAME = 'Tippy Tap Nails';
 const SITE_URL = 'https://www.tippytapnails.com';
 const DEFAULT_DESCRIPTION =
@@ -218,6 +239,15 @@ function getSeoMeta(pathname: string) {
       };
     }
 
+
+    if (category === 'colour') {
+  return {
+    title: `${itemLabel} Colour Press-Ons | ${SITE_NAME}`,
+    description: `Shop ${itemLabel.toLowerCase()} colour press-on nails from Tippy Tap Nails.`,
+    image: heroPreview,
+  };
+}
+
     if (category === 'texture') {
       return {
         title: `${itemLabel} Texture Press-Ons | ${SITE_NAME}`,
@@ -281,7 +311,11 @@ function SeoManager() {
 
 export default function App() {
   return (
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
+        <TooltipProvider>
     <BrowserRouter>
+    <Sonner position="top-right" />
       <SeoManager />
      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
@@ -289,11 +323,18 @@ export default function App() {
         <div className="sticky top-0 z-50">
         
           <Header />
+          
         </div>
+         <AuthModal />
         <main className="flex-grow">
           <Routes>
             {/* Home */}
             <Route path="/" element={<Home />} />
+               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/product/:id" element={<ProductDetail />} />
+             
 
             {/* Collections */}
             <Route path="/collections/new-arrivals" element={<NewArrivals />} />
@@ -316,17 +357,18 @@ export default function App() {
             <Route path="/product/shape/square" element={<Square />} />
             <Route path="/product/shape/round" element={<Round />} />
             <Route path="/product/shape/almond" element={<Almond />} />
-            <Route path="/product/shape/ballerina" element={<Ballerina />} />
+            <Route path="/product/shape/oval" element={<Oval />} />
 
             {/* Product - Texture */}
             <Route path="/product/texture/matte" element={<Matte />} />
             <Route path="/product/texture/glossy" element={<Glossy />} />
             <Route path="/product/texture/glitters" element={<TextureGlitters />} />
             <Route path="/product/texture/gemstones" element={<TextureGemstones />} />
-            <Route path="/product/texture/metallic" element={<Metallic />} />
+          
+            <Route path="/product/texture/cat-eye" element={<CatEye />} />
 
             {/* Product - Style */}
-            <Route path="/product/style/french-manicure" element={<FrenchManicure />} />
+            <Route path="/product/style/french-nail" element={<FrenchNail />} />
             <Route path="/product/style/solids" element={<Solids />} />
             <Route path="/product/style/prints" element={<Prints />} />
             <Route path="/product/style/glitters" element={<StyleGlitters />} />
@@ -335,19 +377,35 @@ export default function App() {
             <Route path="/product/style/ombre" element={<Ombre />} />
             <Route path="/product/style/cat-eyes" element={<CatEyes />} />
 
+              
+{/* Product - Colour */}
+<Route path="/product/colour/pink" element={<Pink />} />
+<Route path="/product/colour/red" element={<Red />} />
+<Route path="/product/colour/blue" element={<Blue />} />
+<Route path="/product/colour/nude" element={<Nude />} />
+<Route path="/product/colour/white" element={<White />} />
+<Route path="/product/colour/black" element={<Black />} />
+<Route path="/product/colour/purple" element={<Purple />} />
+<Route path="/product/colour/green" element={<Green />} />
+
             {/* Other Pages */}
             <Route path="/soft-gel-nails" element={<SoftGelNails />} />
+            <Route path="/products" element={<Shop />} />
+              <Route path="/shop" element={<Shop />} />
             <Route path="/our-story" element={<OurStory />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/press-inquiries" element={<PressInquiries />} />
-            <Route path="/sustainability" element={<Sustainability />} />
+             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
       </div>
     </BrowserRouter>
+     </TooltipProvider>
+    </AppProvider>
+   
+  </QueryClientProvider>
   );
 }

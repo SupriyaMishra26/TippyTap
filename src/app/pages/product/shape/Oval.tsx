@@ -1,11 +1,11 @@
 import ProductFilterPage from '../ProductFilterPage';
 
-export default function Ballerina() {
+export default function Oval() {
   return (
     <ProductFilterPage
       category="Shape"
-      filter="Ballerina"
-      description="Graceful coffin shape with a softer edge"
+      filter="Oval"
+      description="Classic oval shape that suits most nail types"
     />
   );
 }

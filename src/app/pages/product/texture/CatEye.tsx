@@ -1,11 +1,11 @@
 import ProductFilterPage from '../ProductFilterPage';
 
-export default function Metallic() {
+export default function CatEye() {
   return (
     <ProductFilterPage
       category="Texture"
-      filter="Metallic"
-      description="Futuristic chrome and metallic finishes"
+      filter="Cat Eye"
+      description="Magnetic cat eye effect designs"
     />
   );
 }

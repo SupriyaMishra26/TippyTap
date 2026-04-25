@@ -4,7 +4,7 @@ export default function CatEyes() {
   return (
     <ProductFilterPage
       category="Style"
-      filter="Cat Eyes"
+      filter="Cat Eye"
       description="Magnetic cat eye effect designs"
     />
   );
