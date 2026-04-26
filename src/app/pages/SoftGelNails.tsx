@@ -197,7 +197,7 @@ import { Link } from 'react-router-dom';
 import { Sparkles, Heart, Leaf, Package, Clock, Shield, ArrowRight } from 'lucide-react';
 import ProductGrid from '../components/ProductGrid';
 import nailBlue from '../../imports/nail-blue.jpeg';
-import nailRed from "../../imports/nail-red.jpeg";
+import nailRed from '../../imports/nail-red.jpeg';
 import nailOrange from '../../imports/orange.jpeg';
 import nailPink from '../../imports/nail-pink.jpeg';
 
@@ -306,50 +306,49 @@ export default function SoftGelNails() {
           </motion.div>
         </div>
       </section>
-      {/* Features Grid */}
-     <section className="pt-6 pb-16 md:pb-20">
-  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-      {features.map((feature, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          whileHover={{ y: -6 }}
-          className="p-6 md:p-7 rounded-2xl border-2 bg-white shadow-sm hover:shadow-md transition-all"
-          style={{ borderColor: '#D5597C' }}
-        >
-          
-          <motion.div
-            whileHover={{ rotate: 360 }}
-            transition={{ duration: 0.6 }}
-            className="w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center mb-4"
-            style={{ backgroundColor: '#FFF5F7' }}
-          >
-            <feature.icon
-              className="w-6 h-6 md:w-7 md:h-7"
-              style={{ color: '#cb1f52' }}
-            />
-          </motion.div>
+      {/* Features Grid - redesigned compact */}
+      <section className="py-10 sm:py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="mb-3 inline-flex rounded-full bg-[#fff0f4] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#cb1f52]">
+              Why Soft Gel
+            </span>
+            <h2
+              className="font-normal italic leading-tight bg-gradient-to-r from-[#cb1f52] to-[#b71848] bg-clip-text text-transparent"
+              style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+            >
+              Designed for Comfort & Lasting Beauty
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-[#6d4b58] sm:text-base">
+              Six reasons our soft gel press-ons feel just like your natural nails — only better.
+            </p>
+          </div>
 
-          <h3
-            className="text-lg md:text-xl font-bold mb-2"
-            style={{ color: '#cb1f52' }}
-          >
-            {feature.title}
-          </h3>
-
-          <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-            {feature.description}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="group flex gap-4 rounded-[1.5rem] border border-[#f1d4dc] bg-white p-5 shadow-[0_14px_38px_rgba(115,28,52,0.08)] transition hover:shadow-[0_22px_50px_rgba(115,28,52,0.16)]"
+              >
+                <div className="shrink-0">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#cb1f52] to-[#b71848] shadow-md transition group-hover:scale-110">
+                    <feature.icon className="h-6 w-6 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-base font-semibold text-[#2b1020] sm:text-lg">{feature.title}</h3>
+                  <p className="mt-1.5 text-sm leading-6 text-[#6d4b58]">{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Products */}
       <div id="products">
