@@ -14,7 +14,7 @@ export default function Wishlist() {
           <div className="rounded-3xl border border-[#f1d4dc] bg-white p-16 text-center shadow-sm">
             <Heart className="mx-auto h-16 w-16 text-[#cb1f52]" />
             <p className="mt-4 text-lg text-[#4b3140]">No saved items yet</p>
-            <Link to="/" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#b71848]">Browse products</Link>
+            <Link to="/products" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#b71848]">Browse products</Link>
           </div>
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

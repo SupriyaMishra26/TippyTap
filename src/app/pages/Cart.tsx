@@ -26,7 +26,7 @@ export default function Cart() {
             <ShoppingBag className="mx-auto h-16 w-16 text-[#cb1f52]" />
             <p className="mt-4 text-lg text-[#4b3140]">Your cart is empty</p>
             <Link
-              to="/"
+              to="/products"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#cb1f52] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#b71848]"
             >
               Continue Shopping <ArrowRight className="h-4 w-4" />
