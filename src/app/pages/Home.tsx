@@ -850,7 +850,7 @@ import { motion } from 'framer-motion';
 import { useApp } from '../contexts/AppContexts';
 import { toast } from 'sonner';
 
-import heroslide2 from '../../assets/2.png';
+import heroslide2 from '../../assets/h2.png';
 import BG from '../../assets/design.png';
 import CTAsection from '../../imports/1.jpeg';
 
@@ -1384,17 +1384,16 @@ export default function Home() {
     <div className="min-h-screen overflow-hidden bg-background text-foreground">
       {/* ===== HERO ===== */}
     {/* ===== HERO ===== */}
-<section
-  className="bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] pt-0 pb-6"
->
-  <div className="relative w-full">
+<section className="bg-[linear-gradient(180deg,#fff8f4_0%,#fffdfd_100%)] pt-0 pb-4">
+  <div className="relative flex justify-center overflow-hidden">
     <img
       src={heroslide2}
       alt="Tippy Tap Nails"
-      className="block h-auto w-full"
+     className="w-full h-auto block"
       loading="eager"
       decoding="async"
     />
+
     <div className="absolute bottom-6 right-6 sm:bottom-10 sm:right-10">
       <Link
         to="/products"
@@ -1430,7 +1429,12 @@ export default function Home() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#fff0f4] text-[#cb1f52]">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-3 text-sm font-semibold text-[#2b1020]">{item.title}</h3>
+                 <h3
+  className="mt-3 text-sm font-semibold text-[#2b1020]"
+  style={{ fontFamily: "'Jost', sans-serif" }}
+>
+  {item.title}
+</h3>
                   <p className="mt-2 text-xs leading-5 text-[#6d4b58] sm:text-sm">
                     {item.desc}
                   </p>
@@ -1475,7 +1479,7 @@ export default function Home() {
       </p>
     </div>
 
-    <div className="mt-12 grid grid-cols-3 gap-6 sm:gap-8">
+    <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 md:gap-6">
       {[
         { image: softgel, text: "Non-Toxic & Safe" },
         { image: softgelSec, text: "Gentle on Nails" },
@@ -1492,7 +1496,7 @@ export default function Home() {
           transition={{ duration: 0.4, delay: i * 0.06 }}
           className="flex flex-col items-center"
         >
-          <div className="mx-auto aspect-square w-36 overflow-hidden rounded-full border-2 border-[#f1d4dc] bg-[#fff8fb] shadow-[0_12px_30px_rgba(115,28,52,0.08)] sm:w-44 md:w-52">
+          <div className="mx-auto aspect-square w-full max-w-[11rem] overflow-hidden rounded-2xl border-2 border-[#f1d4dc] bg-[#fff8fb] shadow-[0_12px_30px_rgba(115,28,52,0.08)] sm:max-w-[13rem] lg:max-w-[15rem]">
             <img
               src={item.image}
               alt={item.text}

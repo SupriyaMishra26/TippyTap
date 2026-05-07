@@ -301,9 +301,21 @@ export default function OurStory() {
                 className="group overflow-hidden rounded-[2rem] border border-[#f1d4dc] bg-white shadow-[0_18px_45px_rgba(115,28,52,0.1)]"
               >
                 <div className="grid sm:grid-cols-2">
-                  <div className="aspect-square overflow-hidden bg-[#fff0f5]">
-                    <img src={card.img} alt={card.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
-                  </div>
+                  <div>
+  <div className="aspect-square overflow-hidden bg-[#fff0f5]">
+    <img
+      src={card.img}
+      alt={card.title}
+      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+  {/* Text below image */}
+  <p className="mt-2 text-center text-[16px] font-medium tracking-wide text-[#cb1f52]">
+    Each nail designed with care in India 🇮🇳
+  </p>
+</div>
                   <div className="flex flex-col justify-center p-6 sm:p-7">
                     <h3 className="text-xl font-semibold text-[#2b1020] sm:text-2xl">{card.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-[#6d4b58] sm:text-base">{card.body}</p>

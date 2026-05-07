@@ -1012,6 +1012,9 @@ const productGroups = [
       { name: 'Purple', path: '/product/colour/purple' },
 
       { name: 'Green', path: '/product/colour/green' },
+        { name: 'Purple', path: '/product/colour/neon' },
+
+      { name: 'Green', path: '/product/colour/wine' },
 
     ],
 
@@ -1199,33 +1202,45 @@ useEffect(() => {
 
     >
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-0">
+  <div className="flex h-20 items-center gap-2">
 
-        <div className="flex h-20 items-center gap-2 sm:gap-4">
+   <Link to="/" className="flex shrink-0 items-center gap-2 -ml-5">
+      
+      <div className="relative">
+        <img
+          src={Logo}
+          alt="Tippy Tap Nails Logo"
+          className="h-14 w-14 shrink-0 rounded-full border border-white/15 bg-white/95 object-contain shadow-sm"
+          loading="eager"
+          decoding="async"
+        />
 
-           <Link to="/" className="flex shrink-0 items-center gap-3">
+        {/* TM Badge */}
+        <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[8px] font-bold text-[#cb1f52] shadow">
+          TM
+        </span>
+      </div>
 
-            <div className="flex flex-col items-start leading-none sm:items-center">
+      <div className="flex flex-col items-start leading-none">
+        
+        <span
+          className="whitespace-nowrap text-lg sm:text-xl font-semibold tracking-[0.1em] text-[#cb1f52]"
+          style={{ fontFamily: "'Cormorant Garamond', 'Playfair Display', serif" }}
+        >
+          Tippy Tap Nails
+        </span>
 
-              <span
-                className="whitespace-nowrap text-xl font-normal italic tracking-tight text-[#cb1f52] sm:text-2xl xl:text-3xl"
-                style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-              >
-                Tippy Tap Nails
-              </span>
+        <span
+          className="mt-0.5 whitespace-nowrap text-[10px] sm:text-xs font-medium tracking-[0.15em] text-black/80"
+          style={{ fontFamily: "'Jost', sans-serif" }}
+        >
+          Tippy Tippy Tap, which colour do you want??
+        </span>
 
-              <span
-                className="mt-1 whitespace-nowrap text-[8px] sm:text-[9px] font-light tracking-[0.12em] text-black"
-                style={{ fontFamily: "'Jost', sans-serif" }}
-              >
-                Tippy Tippy Tap, which colour do you want??
-              </span>
+      </div>
 
-            </div>
-
-          </Link>
-
-
+    </Link>
 
 
           <nav className="hidden xl:flex flex-1 items-center justify-center gap-1">
@@ -1479,18 +1494,7 @@ useEffect(() => {
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
 
-            <div className="relative block">
-  <img
-    src={Logo}
-    alt="logo"
-    className="h-10 w-10 rounded-full object-contain border border-[#f1d4dc] bg-white shadow-sm"
-  />
-
-  {/* TM */}
-  <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[8px] font-bold text-[#cb1f52] shadow">
-    TM
-  </span>
-</div>
+           
           </div>
         </div>
 

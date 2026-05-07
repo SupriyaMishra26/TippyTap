@@ -204,34 +204,37 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center gap-3">
-               <div className="relative">
-    <img
-      src={Logo}
-      alt="Tippy Tap Nails Logo"
-      className="h-12 w-12 shrink-0 rounded-full border border-white/15 bg-white/95 object-contain shadow-sm"
-      loading="eager"
-      decoding="async"
-    />
-
-    {/* TM Badge */}
-    <span className="absolute -top-1 -right-1 text-[9px] font-semibold text-white   px-1 leading-none shadow-sm">
-      TM
-    </span>
-  </div>
-              <div className="flex flex-col leading-none">
-                <span
-                  className="text-2xl font-normal italic tracking-tight text-[#cb1f52] sm:text-3xl"
-                  style={{ fontFamily: "'Playfair Display', 'Georgia', serif" }}
-                >
-                  Tippy Tap Nails
-                </span>
-                <span
-                  className="mt-1 text-[9px] font-light tracking-[0.12em] text-white/85"
-                  style={{ fontFamily: "'Jost', sans-serif" }}
-                >
-                  Tippy Tippy Tap, which colour do you want??
-                </span>
+            <Link to="/" className="flex shrink-0 items-center gap-2 -ml-5">
+                 <div className="relative">
+                      <img
+                        src={Logo}
+                        alt="Tippy Tap Nails Logo"
+                        className="h-14 w-14 shrink-0 rounded-full border border-white/15 bg-white/95 object-contain shadow-sm"
+                        loading="eager"
+                        decoding="async"
+                      />
+              
+                      {/* TM Badge */}
+                      <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white text-[8px] font-bold text-[#cb1f52] shadow">
+                        TM
+                      </span>
+                    </div>
+              
+                    <div className="flex flex-col items-start leading-none">
+                      
+                      <span
+                        className="whitespace-nowrap text-lg sm:text-xl font-semibold tracking-[0.1em] text-[#cb1f52]"
+                        style={{ fontFamily: "'Cormorant Garamond', 'Playfair Display', serif" }}
+                      >
+                        Tippy Tap Nails
+                      </span>
+              
+                      <span
+                        className="mt-0.5 whitespace-nowrap text-[10px] sm:text-xs font-medium tracking-[0.15em] text-white"
+                        style={{ fontFamily: "'Jost', sans-serif" }}
+                      >
+                        Tippy Tippy Tap, which colour do you want??
+                      </span>
               </div>
             </Link>
 
